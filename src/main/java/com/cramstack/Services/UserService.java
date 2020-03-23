@@ -23,4 +23,8 @@ public class UserService {
 	public List<User> getAllUser() {
 		return userDao.findAll();
 	}
+
+	public User getUserById(Integer userId) {
+		return userDao.findById(userId).orElse(null);
+	}
 }
