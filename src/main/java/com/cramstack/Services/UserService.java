@@ -1,5 +1,7 @@
 package com.cramstack.Services;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 import com.cramstack.Entities.User;
@@ -16,5 +18,9 @@ public class UserService {
 
 	public User createUser(User user) {
 		return userDao.save(user);
+	}
+
+	public List<User> getAllUser() {
+		return userDao.findAll();
 	}
 }

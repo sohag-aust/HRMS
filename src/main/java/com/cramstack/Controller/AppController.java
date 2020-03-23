@@ -1,5 +1,7 @@
 package com.cramstack.Controller;
 
+import java.util.List;
+
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -20,5 +22,10 @@ public class AppController {
 	@PostMapping("/createUser")
 	public User createUser(@RequestBody User user) {
 		return userService.createUser(user);
+	}
+	
+	@GetMapping("/findUsers")
+	public List<User> getAllUser(){
+		return userService.getAllUser();
 	}
 }
