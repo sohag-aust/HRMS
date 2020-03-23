@@ -20,18 +20,20 @@ public class AppController {
 		this.userService = userService;
 	}
 	
-	@PostMapping("/createUser")
+	@PostMapping("/users")
 	public User createUser(@RequestBody User user) {
 		return userService.createUser(user);
 	}
 	
-	@GetMapping("/findUsers")
+	@GetMapping("/users")
 	public List<User> getAllUser(){
 		return userService.getAllUser();
 	}
 	
-	@GetMapping("/findUsers/{userId}")
+	@GetMapping("/users/{userId}")
 	public User getUserById(@PathVariable("userId") Integer userId) {
 		return userService.getUserById(userId);
 	}
+	
+	
 }
