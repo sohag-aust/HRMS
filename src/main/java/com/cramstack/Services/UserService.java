@@ -38,4 +38,18 @@ public class UserService {
 			e.printStackTrace();
 		}
 	}
+
+	public User updateUserById(User newUser, Integer userId) {
+		User oldUser = userDao.findById(userId).orElse(null);
+		
+		oldUser.setName(newUser.getName());
+		oldUser.setEmail(newUser.getEmail());
+		oldUser.setPassword(newUser.getPassword());
+		oldUser.setPhone(newUser.getPhone());
+		oldUser.setDob(newUser.getDob());
+		
+		User updatedUser = oldUser;
+		
+		return userDao.save(updatedUser);
+	}
 }
