@@ -30,10 +30,9 @@ jobs:
         run: |
           sudo /etc/init.d/mysql start
 
-      - name: Import HRMS Database Schema
+      - name: Import Database Schema
         run: |
-          mysql 
-          -e "CREATE DATABASE IF NOT EXISTS ${DB_DATABASE};"
+          mysql -h"${DB_HOST}" -P"${DB_PORT}" -u"${DB_USER}" -p"${DB_PASSWORD}" -e "CREATE DATABASE IF NOT EXISTS ${DB_DATABASE};"
 
 #      - name: Unit Tests
 #        run: mvn -B test --file pom.xml
