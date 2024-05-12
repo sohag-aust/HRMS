@@ -29,7 +29,6 @@ jobs:
           DB_PASSWORD: root
         run: |
           sudo /etc/init.d/mysql start
-          mysql -Dtest -u root -p root -h localhost -p 33306
 
 #      - name: Unit Tests
 #        run: mvn -B test --file pom.xml
