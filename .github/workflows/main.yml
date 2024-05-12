@@ -19,6 +19,18 @@ jobs:
           distribution: 'corretto'
           java-version: '17'
 
+      - name: Importing MySQL
+        env:
+          DB_HOST: 127.0.0.1
+          DB_CONNECTION: mysql
+          DB_DATABASE: hrms
+          DB_PORT: 3306
+          DB_USER: root
+          DB_PASSWORD: root
+        run: |
+          sudo /etc/init.d/mysql start
+          mysql -Dtest -u root -p root -h localhost -p 33306 < "api_token.sql"
+
 #      - name: Unit Tests
 #        run: mvn -B test --file pom.xml
 
