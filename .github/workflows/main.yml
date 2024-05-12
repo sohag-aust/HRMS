@@ -8,7 +8,7 @@ on:
 jobs:
   build-deploy:
     name: Build and Deploy HRMS application
-    runs-on: self-hosted-runner
+    runs-on: ubuntu-latest
     steps:
       - name: checkout branch
         uses: actions/checkout@v4
